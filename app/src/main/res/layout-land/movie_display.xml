@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/goodContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#BE000000">
+
+    <ImageView
+        android:id="@+id/movieImage2"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="12dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/movieTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/movieImage2"
+        android:fontFamily="monospace"
+        android:text="The Greatest Movie of All Time"
+        android:textAlignment="center"
+        android:textColor="#A6FFFFFF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/movieDesc"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/movieTitle"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@+id/movieImage2"
+        android:ellipsize="end"
+        android:fontFamily="monospace"
+        android:maxLines="7"
+        android:text="This is a great Movie, it is probably the best movie, and the only movie that should ever be aired in the movies, tv, theaters and just about any other film known to man"
+        android:textAlignment="textStart"
+        android:textColor="#A6FFFFFF" />
+</RelativeLayout>
