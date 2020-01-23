@@ -3,13 +3,17 @@ package com.stoneco.moviestonefinal;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.parse.GetCallback;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 public class SignUp extends AppCompatActivity {
@@ -60,8 +64,6 @@ public class SignUp extends AppCompatActivity {
 
                 login(username.getText().toString(), password.getText().toString(), view);
 
-//                startCurrentMovies(view);
-
             }
         });
 
@@ -97,6 +99,10 @@ public class SignUp extends AppCompatActivity {
 
         ParseUser newUser = new ParseUser();
 
+
+
+        Log.d("LoginInfo", "username is: " + username +  " password is: " + password);
+
         newUser.logInInBackground(username, password, new LogInCallback() {
             @Override
             public void done(ParseUser user, ParseException e) {
@@ -115,5 +121,6 @@ public class SignUp extends AppCompatActivity {
         });
 
     }
+
 
 }

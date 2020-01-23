@@ -29,7 +29,7 @@ public class ParseApplication extends Application {
                 .applicationId("movie-stone") // should correspond to APP_ID env variable
                 .clientKey("stoneMovie0320")  // set explicitly unless clientKey is explicitly configured on Parse server
                 .clientBuilder(builder)
-                .server("http://movie-stone.herokuapp.com/parse/").build());
+                .server("https://movie-stone.herokuapp.com/parse/").build()); //remember to use https instead of http
 
 
     }
