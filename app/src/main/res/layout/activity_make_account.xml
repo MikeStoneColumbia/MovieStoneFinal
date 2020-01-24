@@ -35,7 +35,7 @@
         app:layout_constraintTop_toBottomOf="@+id/userName" />
 
     <EditText
-        android:id="@+id/passwordLogin"
+        android:id="@+id/passwordMake"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -58,14 +58,14 @@
         android:textColorHint="#A6FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordMake" />
 
     <EditText
         android:id="@+id/phoneNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@android:string/emptyPhoneNumber"
+        android:hint="Mobile Number"
         android:inputType="textPersonName"
         android:textColor="#A6FFFFFF"
         android:textColorHint="#A6FFFFFF"

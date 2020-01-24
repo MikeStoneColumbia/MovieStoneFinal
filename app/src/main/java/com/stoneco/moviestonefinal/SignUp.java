@@ -9,12 +9,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.parse.GetCallback;
+import com.parse.FindCallback;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
-import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+
+import java.util.List;
 
 public class SignUp extends AppCompatActivity {
 
@@ -33,11 +34,11 @@ public class SignUp extends AppCompatActivity {
 
         guestBtn = findViewById(R.id.guestBtn);
         username = findViewById(R.id.usernameLogin);
-        password = findViewById(R.id.passwordLogin);
+        password = findViewById(R.id.passwordMake);
         loginBtn = findViewById(R.id.signUpLogin);
         createBtn = findViewById(R.id.createBtn);
         username = findViewById(R.id.usernameLogin);
-        password = findViewById(R.id.passwordLogin);
+        password = findViewById(R.id.passwordMake);
 
         createBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +63,7 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                test();
                 login(username.getText().toString(), password.getText().toString(), view);
 
             }
@@ -119,6 +121,28 @@ public class SignUp extends AppCompatActivity {
 
             }
         });
+
+    }
+
+
+    public void test(){
+
+        final ParseQuery<ParseUser> emailQuery = ParseUser.getQuery();
+
+        emailQuery.whereEqualTo("username", "Stone");
+
+        emailQuery.findInBackground(new FindCallback<ParseUser>() {
+            @Override
+            public void done(List<ParseUser> objects, ParseException e) {
+
+                    Log.d("test", objects.get(0).getUsername());
+
+
+
+            }
+        });
+
+
 
     }
 
