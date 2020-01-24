@@ -44,7 +44,6 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
                 startMakeAccount();
 
             }
@@ -63,7 +62,6 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                test();
                 login(username.getText().toString(), password.getText().toString(), view);
 
             }
@@ -101,8 +99,6 @@ public class SignUp extends AppCompatActivity {
 
         ParseUser newUser = new ParseUser();
 
-
-
         Log.d("LoginInfo", "username is: " + username +  " password is: " + password);
 
         newUser.logInInBackground(username, password, new LogInCallback() {
@@ -124,27 +120,6 @@ public class SignUp extends AppCompatActivity {
 
     }
 
-
-    public void test(){
-
-        final ParseQuery<ParseUser> emailQuery = ParseUser.getQuery();
-
-        emailQuery.whereEqualTo("username", "Stone");
-
-        emailQuery.findInBackground(new FindCallback<ParseUser>() {
-            @Override
-            public void done(List<ParseUser> objects, ParseException e) {
-
-                    Log.d("test", objects.get(0).getUsername());
-
-
-
-            }
-        });
-
-
-
-    }
 
 
 }
