@@ -23,6 +23,8 @@
         android:layout_toEndOf="@+id/movieImage2"
         android:fontFamily="monospace"
         android:text="The Greatest Movie of All Time"
+        android:maxLines = "1"
+        android:ellipsize = "end"
         android:textAlignment="center"
         android:textColor="#A6FFFFFF"
         android:textSize="24sp" />
