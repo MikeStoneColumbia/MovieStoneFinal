@@ -47,4 +47,19 @@
         android:text="This is a great Movie, it is probably the best movie, and the only movie that should ever be aired in the movies, tv, theaters and just about any other film known to man"
         android:textAlignment="textStart"
         android:textColor="#A6FFFFFF" />
+
+    <ImageView
+        android:id="@+id/playButtonBad"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignStart="@+id/movieImage2"
+        android:layout_alignTop="@+id/movieImage2"
+        android:layout_alignEnd="@+id/movieImage2"
+        android:layout_alignBottom="@+id/movieImage2"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="32dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
 </RelativeLayout>

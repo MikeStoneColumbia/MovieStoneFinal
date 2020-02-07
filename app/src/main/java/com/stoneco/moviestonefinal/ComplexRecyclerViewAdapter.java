@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.util.Log;
@@ -32,6 +33,8 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter <RecyclerVi
     private List<Movie> movies;
     private final int FAMOUS = 1, BAD = 0;
     ImageView playButton;
+    ImageView playButtonBad;
+    ImageView hot;
 
     public ComplexRecyclerViewAdapter(List<Movie> movies, Context context){
 
@@ -114,10 +117,12 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter <RecyclerVi
         final Movie movie = (Movie) movies.get(position);
 
         playButton = display1.getPlayButton();
+        hot = display1.getHot();
 
         if(context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
             GlideApp.with(context).load(movie.getBackdrop()).transform(new RoundedCornersTransformation(40,0)).override(920,Target.SIZE_ORIGINAL).into(display1.getImageView());
             GlideApp.with(context).load(R.drawable.play_button).override(320,320).into(playButton);
+            hot.setImageResource(R.drawable.fire);
             display1.getMovieTitle().setText(movie.getTitle());
             display1.getMovieOverview().setText(movie.getOverview());
             playButton.setAlpha(135);
@@ -125,14 +130,11 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter <RecyclerVi
         else {
             GlideApp.with(context).load(movie.getPoster()).transform(new RoundedCornersTransformation(40, 0)).override(120, Target.SIZE_ORIGINAL).into(display1.getImageView());
             playButton.setImageResource(R.drawable.play_button);
+            hot.setImageResource(R.drawable.fire);
             display1.getMovieTitle().setText(movie.getTitle());
             display1.getMovieOverview().setText(movie.getOverview());
             playButton.setAlpha(100);
         }
-
-
-
-
 
 
         display1.getContainer().setOnClickListener(new View.OnClickListener() {
@@ -153,12 +155,22 @@ public class ComplexRecyclerViewAdapter extends RecyclerView.Adapter <RecyclerVi
 
         final Movie movie = (Movie) movies.get(position);
 
+        playButtonBad = display.getPlayButtonBad();
 
-        if(context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
-            GlideApp.with(context).load(movie.getBackdrop()).transform(new RoundedCornersTransformation(40,0)).override(920,Target.SIZE_ORIGINAL).into(display.getPoster());
-        else
-            GlideApp.with(context).load(movie.getPoster()).transform(new RoundedCornersTransformation(40,0)).override(120,Target.SIZE_ORIGINAL).into(display.getPoster());
+        if(context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
 
+            GlideApp.with(context).load(movie.getBackdrop()).transform(new RoundedCornersTransformation(40, 0)).override(920, Target.SIZE_ORIGINAL).into(display.getPoster());
+            playButtonBad.setImageResource(R.drawable.play_button);
+            playButtonBad.setAlpha(100);
+
+        }
+        else {
+
+            GlideApp.with(context).load(movie.getPoster()).transform(new RoundedCornersTransformation(40, 0)).override(120, Target.SIZE_ORIGINAL).into(display.getPoster());
+            playButtonBad.setImageResource(R.drawable.play_button);
+            playButtonBad.setAlpha(100);
+
+        }
 
         if(movie != null){
 

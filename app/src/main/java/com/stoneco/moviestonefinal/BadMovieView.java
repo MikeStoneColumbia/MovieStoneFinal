@@ -1,5 +1,6 @@
 package com.stoneco.moviestonefinal;
 
+import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,10 +13,12 @@ public class BadMovieView extends RecyclerView.ViewHolder {
     private TextView title;
     private TextView overview;
     private RelativeLayout badContainer;
+    private ImageView playButtonBad;
 
     public BadMovieView(View v){
         super(v);
 
+        playButtonBad = (ImageView)v.findViewById(R.id.playButtonBad);
         poster = (ImageView)v.findViewById(R.id.movieImage2);
         title = (TextView)v.findViewById(R.id.movieTitle);
         overview = (TextView)v.findViewById(R.id.movieDesc);
@@ -45,4 +48,11 @@ public class BadMovieView extends RecyclerView.ViewHolder {
         return poster;
 
     }
+
+    public ImageView getPlayButtonBad(){
+
+        return playButtonBad;
+
+    }
+
 }
